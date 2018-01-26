@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>vue_if</title>
+</head>
+
+<body>
+  <div id="if1">
+    <h1 v-if="ok">Yes</h1>
+    <h1 v-else>No</h1>
+  </div>
+  <div id="if_wrap1">
+    <div v-if="type === 'A'">
+      A
+    </div>
+    <div v-else-if="type === 'B'">
+      B
+    </div>
+    <div v-else-if="type === 'C'">
+      C
+    </div>
+    <div v-else>
+      Not A/B/C
+    </div>
+  </div>
+  <div id="if_wrap2">
+    <template v-if="loginType === 'username'">
+      <label>Username</label>
+      <input placeholder="Enter your username" key="username-input" placeholder="Enter your username">
+    </template>
+    <template v-else>
+      <label>Email</label>
+      <input placeholder="Enter your email address" key="email-input" placeholder="Enter your email address">
+    </template> 
+    <br/>
+    <button v-on:click="toggle">toggle</button>
+  </div>
+  <div id="if_wrap3">
+      <h1 v-show="ok">Hello!</h1>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script>
+    var app1 = new Vue({
+      el: '#if1',
+      data: {
+        "ok": true
+      }
+    })
+    var app2 = new Vue({
+      el: '#if_wrap1',
+      data: {
+        type: 'B'
+      }
+    })
+    var app3 = new Vue({
+      el: '#if_wrap2',
+      data: {
+        loginType: 'username'
+      },
+      methods: {
+        toggle: function () {
+          this.loginType = this.loginType.split('').reverse().join('')
+        }
+      }
+    })
+    var app3 = new Vue({
+      el: '#if_wrap3',
+      data: {
+        ok: true
+      }
+    })
+  </script>
+</body>
+
+</html>
