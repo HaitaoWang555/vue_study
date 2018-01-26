@@ -1,9 +1,9 @@
 ## 语法
-`v-bind:title="message"` 该指令的意思是：“将这个元素节点的 title 特性和 Vue 实例的 message 属性保持一致”
-`v-if="seen"` 可以在 Vue 插入/更新/移除元素时自动应用过渡效果
-`v-for="todo in todos"` 可以绑定数组的数据来渲染一个项目列表
-`v-on:click="reverseMessage"` 添加一个事件监听器
-`v-model="message"` 它能轻松实现表单输入和应用状态之间的双向绑定
+`v-bind:title="message"` 该指令的意思是：“将这个元素节点的 title 特性和 Vue 实例的 message 属性保持一致”   <br/>
+`v-if="seen"` 可以在 Vue 插入/更新/移除元素时自动应用过渡效果  <br/>
+`v-for="todo in todos"` 可以绑定数组的数据来渲染一个项目列表  <br/>
+`v-on:click="reverseMessage"` 添加一个事件监听器  <br/>
+`v-model="message"` 它能轻松实现表单输入和应用状态之间的双向绑定  <br/>
 
 ## 组件
 ```
