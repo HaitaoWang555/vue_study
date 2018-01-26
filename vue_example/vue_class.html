@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>vue_class_style</title>
+</head>
+
+<body>
+  <div class="static" 
+  v-bind:class="{ active: isActive, 'text-danger': hasError }">
+  </div>
+  <div id="example2" v-bind:class="classObject"></div>
+  <div id="example3" v-bind:class="[activeClass, errorClass]"></div>
+  <div id="example4" v-bind:class="[isActive ? activeClass : '', errorClass]"></div>
+  <div id="example5" v-bind:style="{ color: activeColor, fontSize: fontSize + 'px' }">466</div>
+  <div id="example6" v-bind:style="styleObject">466</div>
+  <div id="example7" v-bind:style="[baseStyles, overridingStyles]">466</div>
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script>
+    var app = new Vue({
+      el: '.static',
+      data: {
+        isActive: true,
+        hasError: true
+      }
+    })    
+    var app2 = new Vue({
+      el: '#example2',
+      data: {
+        classObject: {
+          active: true,
+          'text-danger': true
+        }
+      }
+    }) 
+    var app3 = new Vue({
+      el: '#example3',
+      data: {
+        activeClass: 'active',
+        errorClass: 'text-danger'
+      }
+    }) 
+    var app4 = new Vue({
+      el: '#example4',
+      data: {
+        isActive: true,
+        activeClass: 'active',
+        errorClass: 'text-danger'
+      }
+    }) 
+    var app5 = new Vue({
+      el: '#example5',
+      data: {
+        activeColor: 'red',
+        fontSize: 30
+      }
+    }) 
+    var app6 = new Vue({
+      el: '#example6',
+      data: {
+        styleObject: {
+          color: 'blue',
+          fontSize: '24px'
+        }
+      }
+    }) 
+    var app7 = new Vue({
+      el: '#example7',
+      data: {
+        baseStyles: {
+          color: 'blue',
+          fontSize: '32px'
+        },
+        overridingStyles: {
+          'font-weight': 'bold'
+        }
+      }
+    }) 
+  </script>
+</body>
+
+</html>
